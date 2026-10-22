@@ -30,6 +30,16 @@ import at.petrak.hexcasting.common.casting.actions.local.OpPeekLocal;
 import at.petrak.hexcasting.common.casting.actions.local.OpPushLocal;
 import at.petrak.hexcasting.common.casting.actions.math.OpCoerceToAxial;
 import at.petrak.hexcasting.common.casting.actions.math.OpRandom;
+import at.petrak.hexcasting.common.casting.actions.math.OpVectorClampMagnitude;
+import at.petrak.hexcasting.common.casting.actions.math.OpVectorBezier;
+import at.petrak.hexcasting.common.casting.actions.math.OpSmoothstep;
+import at.petrak.hexcasting.common.casting.actions.math.OpVectorSpring;
+import at.petrak.hexcasting.common.casting.actions.math.OpVectorReflectNormal;
+import at.petrak.hexcasting.common.casting.actions.math.OpVectorCatmullRom;
+import at.petrak.hexcasting.common.casting.actions.math.OpVectorHermiteSpline;
+import at.petrak.hexcasting.common.casting.actions.math.OpVectorBounce;
+import at.petrak.hexcasting.common.casting.actions.math.OpVectorReflect;
+import at.petrak.hexcasting.common.casting.actions.math.OpVectorDampen;
 import at.petrak.hexcasting.common.casting.actions.math.logic.OpBoolIf;
 import at.petrak.hexcasting.common.casting.actions.math.logic.OpCoerceToBool;
 import at.petrak.hexcasting.common.casting.actions.math.logic.OpEquality;
@@ -173,6 +183,26 @@ public class HexActions {
         new OperationAction(HexPattern.fromAngles("qeeeee", HexDir.EAST)));
     public static final ActionRegistryEntry COERCE_AXIAL = make("coerce_axial",
         new ActionRegistryEntry(HexPattern.fromAngles("qqqqqaww", HexDir.NORTH_WEST), OpCoerceToAxial.INSTANCE));
+    public static final ActionRegistryEntry VECTOR_CLAMP_MAGNITUDE = make("vector_clamp_magnitude",
+        new ActionRegistryEntry(HexPattern.fromAngles("waqawqqq", HexDir.NORTH_EAST), OpVectorClampMagnitude.INSTANCE));
+    public static final ActionRegistryEntry VECTOR_BEZIER = make("vector_bezier",
+        new ActionRegistryEntry(HexPattern.fromAngles("wdedweee", HexDir.NORTH_WEST), OpVectorBezier.INSTANCE));
+    public static final ActionRegistryEntry SMOOTHSTEP = make("smoothstep",
+        new ActionRegistryEntry(HexPattern.fromAngles("eqqqqwaq", HexDir.EAST), OpSmoothstep.INSTANCE));
+    public static final ActionRegistryEntry VECTOR_SPRING = make("vector_spring",
+        new ActionRegistryEntry(HexPattern.fromAngles("waqawddw", HexDir.NORTH_EAST), OpVectorSpring.INSTANCE));
+    public static final ActionRegistryEntry VECTOR_REFLECT_NORMAL = make("vector_reflect_normal",
+        new ActionRegistryEntry(HexPattern.fromAngles("wdedwaqw", HexDir.NORTH_WEST), OpVectorReflectNormal.INSTANCE));
+    public static final ActionRegistryEntry VECTOR_CATMULL_ROM = make("vector_catmull_rom",
+        new ActionRegistryEntry(HexPattern.fromAngles("wdedwawq", HexDir.NORTH_WEST), OpVectorCatmullRom.INSTANCE));
+    public static final ActionRegistryEntry VECTOR_HERMITE_SPLINE = make("vector_hermite_spline",
+        new ActionRegistryEntry(HexPattern.fromAngles("waqawde", HexDir.NORTH_EAST), OpVectorHermiteSpline.INSTANCE));
+    public static final ActionRegistryEntry VECTOR_BOUNCE = make("vector_bounce",
+        new ActionRegistryEntry(HexPattern.fromAngles("waqawq", HexDir.NORTH_EAST), OpVectorBounce.INSTANCE));
+    public static final ActionRegistryEntry VECTOR_REFLECT = make("vector_reflect",
+        new ActionRegistryEntry(HexPattern.fromAngles("wdedwddw", HexDir.NORTH_WEST), OpVectorReflect.INSTANCE));
+    public static final ActionRegistryEntry VECTOR_DAMPEN = make("vector_dampen",
+        new ActionRegistryEntry(HexPattern.fromAngles("waqawwa", HexDir.NORTH_EAST), OpVectorDampen.INSTANCE));
 
     // == Logic ==
 
